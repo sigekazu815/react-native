@@ -1,0 +1,3 @@
+rootProject.name = 'knock_sample'
+
+include ':app'
