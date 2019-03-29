@@ -19,23 +19,21 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
-  render() {
-    const messages = ['筋トレ', '勉強', 'カップ麺作るカップ麺作るカップ麺作る'];
+  constructor() {
+    super();
+    this.state = {
+        messages: ['筋トレ', '勉強', 'カップ麺作るカップ麺作るカップ麺作る']
+    }
+  }
 
+  render() {
     return (
         <View style={styles.container}>
             {
-                messages.map((message ,idx) => {
+                this.state.messages.map((message ,idx) => {
                     return (
-                        <Draggable
-                            key={ idx }
-                            reverse={ false }
-                            renderColor='gray'
-                            renderShape='square'
-                            offsetX={ 0 }
-                            offsetY={ 0 }
-                            renderText={ message }
-                            renderSize={ 50 }
+                        <Draggable key={ idx } reverse={ false } renderColor='gray' renderShape='square'
+                            offsetX={ 0 } offsetY={ 0 } renderText={ message } renderSize={ 50 }
                         />
                     );
                 })
